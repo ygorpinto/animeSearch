@@ -6,19 +6,22 @@ export const FetchAnimes = () => {
     
     const [query,setQuery] = useState("");
 
-    const BringAnimeData = async () => {
-        const res = await axios.get(`https://api.jikan.moe/v3/search/anime?q=naruto`);
+    const BringAnimeData = async (e) => {
+        e.preventDefault();
+        const res = await axios.get(`https://api.jikan.moe/v3/search/anime?q=${query}`);
         const data = await res.data;
+        console.log(data); 
     }
 
     return (
         <FetchAnimesStyles>
         <div className="mainContainer">
-            <form>
+            <form
+            onSubmit={BringAnimeData}
+            >
             <input 
             type="text"
             onChange={e=>setQuery(e.target.value)}
-            onSubmit={BringAnimeData}
             />
             </form>
         </div>
