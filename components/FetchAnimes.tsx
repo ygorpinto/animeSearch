@@ -1,15 +1,10 @@
 import axios from "axios"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FetchAnimesStyles } from "./FetchAnimesStyles";
 
 export const FetchAnimes = () => {
     
     const [query,setQuery] = useState("");
-
-    useEffect(()=>{
-        BringAnimeData();
-        console.log(query);
-    },[]);
 
     const BringAnimeData = async () => {
         const res = await axios.get(`https://api.jikan.moe/v3/search/anime?q=naruto`);
@@ -19,10 +14,13 @@ export const FetchAnimes = () => {
     return (
         <FetchAnimesStyles>
         <div className="mainContainer">
+            <form>
             <input 
             type="text"
             onChange={e=>setQuery(e.target.value)}
+            onSubmit={BringAnimeData}
             />
+            </form>
         </div>
         </FetchAnimesStyles>
     )
