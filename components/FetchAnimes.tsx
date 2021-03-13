@@ -4,10 +4,10 @@ import { FetchAnimesStyles } from "./FetchAnimesStyles";
 
 
 export const FetchAnimes = () => {
-    
-    const [query,setQuery] = useState("Naruto");
-    const [response,setResponse] = useState([]); 
-    const [isSearched,setIsSearched] = useState(false); 
+
+    const [query, setQuery] = useState("Naruto");
+    const [response, setResponse] = useState([]);
+    const [isSearched, setIsSearched] = useState(false);
 
 
 
@@ -17,30 +17,35 @@ export const FetchAnimes = () => {
         const data = await res.data;
         setResponse(data);
         setIsSearched(true)
-        console.log(response);
-        
-    }    
+        console.log(data);
+
+    }
 
     return (
         <FetchAnimesStyles>
-        <div className="mainContainer">
-            <form
-            onSubmit={BringAnimeData}
-            >
-            <input 
-            type="text"
-            onChange={e=>setQuery(e.target.value)}
-            />
-            </form>
-        </div>
-        {isSearched?(
-            response.results.map(item=>(
-                <div key={item.title}>
-                {item.title}
-                <img src={item.image_url}/>
-                </div>
-        ))
-        ): null}
+            <div className="formContainer">
+                <form
+                    onSubmit={BringAnimeData}
+                >
+                    <input
+                        type="text"
+                        placeholder="Digite o nome do Anime"
+                        onChange={e => setQuery(e.target.value)}
+                    />
+                </form>
+            </div>
+            <div className="mainContainer">
+                {isSearched ? (
+                    response.results.map(item => (
+                        <div key={item.title}>
+                            <p>{item.title}</p>
+                            <img src={item.image_url} />
+                            <p>{item.synopsis}</p>
+                            <button><a href={item.url} target="_blank">Assistir</a></button>
+                        </div>
+                    ))
+                ) : null}
+            </div>
         </FetchAnimesStyles>
     )
 }
