@@ -22,10 +22,11 @@ align-content:center;
     }
         input {
             height:2rem;
-            width:15rem;
+            width:20rem;
             border-radius:0.6rem;
             border:none;
             box-shadow:0.1rem 0.1rem rgba(0,0,0,0.3);
+            text-align:center;
             font-family: 'Montserrat', sans-serif;
             ::placeholder {
                 text-align:center;
