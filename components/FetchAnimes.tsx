@@ -24,6 +24,7 @@ export const FetchAnimes = () => {
     return (
         <FetchAnimesStyles>
             <div className="formContainer">
+                <h1>Animes Search</h1>
                 <form
                     onSubmit={BringAnimeData}
                 >
@@ -37,10 +38,9 @@ export const FetchAnimes = () => {
             <div className="mainContainer">
                 {isSearched ? (
                     response.results.map(item => (
-                        <div key={item.title}>
+                        <div key={item.title} className="anime">
                             <p>{item.title}</p>
                             <img src={item.image_url} />
-                            <p>{item.synopsis}</p>
                             <button><a href={item.url} target="_blank">Assistir</a></button>
                         </div>
                     ))
