@@ -1,17 +1,25 @@
 import axios from "axios"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FetchAnimesStyles } from "./FetchAnimesStyles";
+
 
 export const FetchAnimes = () => {
     
-    const [query,setQuery] = useState("");
+    const [query,setQuery] = useState("Naruto");
+    const [response,setResponse] = useState([]); 
+    const [isSearched,setIsSearched] = useState(false); 
+
+
 
     const BringAnimeData = async (e) => {
         e.preventDefault();
         const res = await axios.get(`https://api.jikan.moe/v3/search/anime?q=${query}`);
         const data = await res.data;
-        console.log(data); 
-    }
+        setResponse(data);
+        setIsSearched(true)
+        console.log(response);
+        
+    }    
 
     return (
         <FetchAnimesStyles>
@@ -25,6 +33,14 @@ export const FetchAnimes = () => {
             />
             </form>
         </div>
+        {isSearched?(
+            response.results.map(item=>(
+                <div key={item.title}>
+                {item.title}
+                <img src={item.image_url}/>
+                </div>
+        ))
+        ): null}
         </FetchAnimesStyles>
     )
 }
