@@ -17,7 +17,8 @@ align-content:center;
         margin:1%;
         text-align:center;
         font-size:5rem;
-        font-family: 'Ranchers', cursive;
+        font-family: 'Poppins', sans-serif;
+        font-weight:100;
     }
         input {
             height:2rem;
@@ -25,8 +26,10 @@ align-content:center;
             border-radius:0.6rem;
             border:none;
             box-shadow:0.1rem 0.1rem rgba(0,0,0,0.3);
+            font-family: 'Montserrat', sans-serif;
             ::placeholder {
                 text-align:center;
+                font-family: 'Montserrat', sans-serif;
             }
         }
 }
@@ -52,7 +55,8 @@ align-content:center;
         }
         p {
             text-align:center;
-
+            font-family: 'Montserrat', sans-serif;
+            font-size:0.9rem;
         }
         button {
             margin:5%;
@@ -61,6 +65,7 @@ align-content:center;
             box-shadow:0.1rem 0.1rem rgba(0,0,0,0.3);
             width:5rem;
             background-color:#fff;
+            font-family: 'Montserrat', sans-serif;
 
             :hover {
                 opacity:0.8;
