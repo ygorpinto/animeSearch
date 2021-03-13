@@ -33,6 +33,20 @@ align-content:center;
                 font-family: 'Montserrat', sans-serif;
             }
         }
+
+        @media screen and (max-width:450px){
+            h1 {
+            margin:1%;
+            text-align:center;
+            font-size:1.6rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight:100;
+        }
+
+        input {
+            width:80vw;
+        }
+    }
 }
 
 .mainContainer {
@@ -78,6 +92,17 @@ align-content:center;
             }
             
         }
+
     }   
+
+    @media screen and (max-width:450px){
+            .anime {
+                margin-top:7%;
+
+                p {
+                    font-size:0.7rem;
+                }
+            }
+        }
 }
 `
