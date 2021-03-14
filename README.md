@@ -4,7 +4,7 @@ Aplicaçao de busca de anime, básicamente consome uma API e retorna os dados da
 
 ### Demo 
 
-[](/demo.gif)
+[](/public/demo.gif)
 
 
 #### em desenvolvimento ... 
