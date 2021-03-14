@@ -7,6 +7,4 @@ Aplicaçao de busca de anime, básicamente consome uma API e retorna os dados da
 [](/demo.gif)
 
 
-
-
 #### em desenvolvimento ... 
